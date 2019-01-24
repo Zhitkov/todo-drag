@@ -17,7 +17,7 @@
 
     function dragOver(e) {
       e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
+      // e.dataTransfer.dropEffect = 'move';
       return false;
     }
 
@@ -30,8 +30,8 @@
     }
 
     function dragEnd(e) {
-      var listItens = document.querySelectorAll('task');
-      [].forEach.call(listItens, function(item) {
+      var listItems = document.querySelectorAll('task');
+      [].forEach.call(listItems, function(item) {
         item.classList.remove('over');
       });
       this.style.opacity = '1';
@@ -46,7 +46,3 @@
       el.addEventListener('dragend', dragEnd, false);
     }
 
-    var listItens = document.querySelectorAll('task');
-    [].forEach.call(listItens, function(item) {
-      addEventsDragAndDrop(item);
-    });

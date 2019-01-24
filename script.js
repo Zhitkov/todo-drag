@@ -16,6 +16,11 @@ function addTask() {
 	let newTask = task.cloneNode(true);
 	document.querySelector(".board").appendChild(newTask);
 	newTask.className = newTask.className + " show";
+
+   var listItems = document.querySelectorAll('task');
+      [].forEach.call(listItems, function(item) {
+        addEventsDragAndDrop(item);
+      });
 }
 
 function notDone(notDoneButton) {
