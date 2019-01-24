@@ -1,0 +1,182 @@
+
+@-webkit-keyframes appear {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes not_done {
+  0%   { opacity: 1; background: white; transform: scale(1); margin-bottom: 40px;}
+  100% { opacity: 0; background: #f12b5026; transform: scale(0);margin-bottom: -70px;}
+}
+
+@-webkit-keyframes done {
+  0%   { opacity: 1; background: white; transform: scale(1); margin-bottom: 40px; }
+  100% { opacity: 0; background: aliceblue; transform: scale(0); margin-bottom: -70px;}
+}
+
+body {
+  font-family: "Proxima Nova", sans-serif;
+  background: #E5E5E6;;
+}
+
+div {
+  outline: none;
+}
+
+[contentEditable=true]:empty:not(:focus):before {
+    content:attr(data-text);
+    opacity: 0.2;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.name {
+  margin: 0px 0;
+  padding: 10px 0;
+  position: relative;
+  background: white;
+  border-radius: 8px;
+}
+
+.add-task {
+  color: #4B7CF3;
+  cursor: pointer;
+  margin: 0 0 20px 0;
+  background: white;
+  padding: 0 0 10px;
+}
+
+.name-sort {
+  position: absolute;
+  right: 10px;
+  color: #2DCD72;
+  cursor: pointer;
+}
+
+.add-task-text {
+  border-bottom: 1px solid #E3EBFB;
+}
+
+
+.column {
+  min-width: 340px;
+  width:32%;
+  max-width: 100%;
+  text-align: center;
+  background: #F2F2F2;
+  border-radius: 8px;
+  margin: 0 0 20px 0;
+}
+
+.column:last-child { margin: 0 0 20px 0;  }
+
+.board {
+  min-height : 400px;
+}
+
+.column.done task {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+task {
+  background: white;
+  display: flex;
+  margin: 0 10px 40px 10px;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px;
+  opacity: 0;
+  display: none;
+  min-width: 350px;
+}
+
+task .task-name {
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+task .task-description {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+
+task .task-move-drop {
+  position: absolute;
+  background: white;
+  padding: 10px 15px 10px 10px;
+  list-style-type: none;
+  left: 0;
+  top: 0;
+}
+
+span.task-move > ul {   display: none; }
+
+span.task-move:hover > ul {   display: block; }
+.task-options{
+    display: flex;
+    justify-content: center;
+}
+
+.done_button, .not_done_button{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    pointer-events: all;
+    margin: 5px;
+}
+.done_button{
+    background-color: aliceblue;
+    color: black;
+}
+.not_done_button{
+    background-color: #f12b5026;
+    color: black;
+}
+task.show{
+  opacity: 1;
+  display: block;
+  -webkit-transition: .5s;
+     -moz-transition: .5s;
+      -ms-transition: .5s;
+       -o-transition: .5s;
+          transition: .5s;
+  animation:         appear .5s ease-out;
+}
+
+task.not_done{
+  animation:         not_done .5s ease-out;
+}
+
+task.done{
+  animation:         done .5s ease-out;
+}
+
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.over {
+  transform: scale(1.1, 1.1);
+}
+
+
+
+
+
