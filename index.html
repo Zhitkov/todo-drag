@@ -12,11 +12,12 @@
         <div class="name">
           <span class="name-common">TO-DO-LIST</span>
         </div>
-        <div onclick="addTask();" class="add-task"> 
-           <span class="add-task-text">Добавить задачу</span> 
+        <div class="add-task"> 
+           <span onclick="addTask();" class="add-task-text">Добавить задачу</span> 
+          
+        <span onclick="saveList();" class="save add-task-text">Сохранить</span> 
         </div>
         <div class="board" id="in-process-task-board">
-        
           <task draggable='true'>
             <div class="task-name" contentEditable="true" data-text="Название задачи"></div>
             <div class="task-options">
@@ -33,5 +34,7 @@
     </div>
   <script src="drag.js" type="text/javascript"></script>
   <script src="script.js" type="text/javascript"></script>
+  <script src="db.js" type="text/javascript"></script>
+  <!-- <script src="app.js" type="text/javascript"></script> -->
   </body>
 </html>
