@@ -187,7 +187,7 @@ function refreshTodos() {
         let currentTask = e.target.parentElement;
         var id = parseInt(currentTask.getAttribute('data-id'));
         currentTask.className += " done ";
-        setTimeout(function(){todoDB.deleteTodo(id, refreshTodos)}, 500);
+        setTimeout(function(){todoDB.deleteTodo(id, refreshTodos)}, 400);
         // todoDB.deleteTodo(id, refreshTodos);
       });
 
@@ -195,7 +195,8 @@ function refreshTodos() {
         let currentTask = e.target.parentElement;
         var id = parseInt(currentTask.getAttribute('data-id'));
         currentTask.className += " not_done ";
-        setTimeout(function(){todoDB.deleteTodo(id, refreshTodos)}, 500);
+        setTimeout(function(){todoDB.deleteTodo(id, refreshTodos)}, 400);
+        // todoDB.deleteTodo(id, refreshTodos);
       });
     }
 
